@@ -10,24 +10,120 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    body{
+      background: hsl(233, 47%, 7%)
+    }
+
+    .box{
+      margin: 10%;
+    }
+
+
+
+      .wrapper {
+        display: flex;  
+        flex-flow: row wrap;
+        text-align: left;
+        background: hsl(244, 38%, 16%);
+        border-radius: 1.5em;
+
+      }
+
+      .container {
+        display: flex; /* or inline-flex */
+        flex-wrap: wrap;
+        align-items:  flex-start;
+        align-content: left;
+        justify-content: space-around;
+      }
+
+      
+      .wrapper > * {
+        flex: 1 80%;
+      }
+
+      .box img{
+        width: 100%;
+        height: auto;
+        border-top-right-radius: 20px;
+        filter: sepia(100%);
+
+
+      }
+
+      @supports(object-fit: cover){
+          .box img{
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+          }
+      }
+
+      @media all and (max-width: 800px) {
+        .container {padding: 60px; }
+        .aside-1 { margin: 8%;}
+        .container {gap: 65%;}
+        .box img {border-top-left-radius: 20px;}
+
+      }
+ 
+
+      @media all and (min-width: 800px) {
+        .main    { flex: 1 25px; }
+        .aside-1 { order: 1; } 
+        .main    { order: 2; }
+        .aside { flex: 1 0 0; }
+        .aside-1 { margin: 10%;}
+        .box img {border-bottom-right-radius: 20px;}
+
+      }
+
+
+      p {
+        font: 120% sans-serif;
+        color: hsla(0, 0%, 100%, 0.75);
+      }
+
+      h1 {
+        font: bold 180% sans-serif;
+        color: hsl(0, 0%, 100%);
+      }
+
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+
   </style>
 </head>
 <body>
+  <div class="box">
+      <div class="wrapper">
+        <div class="main">
+          <img src="./images/image-header-desktop.jpg"/>
+        </div>
+        <aside class="aside aside-1">
+          <h1>Get insights that help your business grow.</h1>
+          <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+          experience, and overall efficiency.</p>
+          <div class="container">
+            <div>
+              <h1> 
+                10k+
+              </h1> 
+              <p>
+                companies
+              </p>
+            </div>
+            <div> <h1>314</h1><p>templates</p></div>
+            <div> <h1>12m+</h1><p>queries</p></div>
+          </div> 
+        </aside>       
+      </div>
 
-  Get insights that help your business grow.
-
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    </div>
+    <div class="attribution">
+       <p> Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.</p>
+    </div>
 </body>
 </html>
